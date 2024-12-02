@@ -23,7 +23,7 @@ while True:
 
     if (operator.lower() == 'exit'):
         print("Exiting the program.")
-        break
+        exit()
 
     elif (operator in ['+', '-', '*', '/', '%', '//', '**'] or operator.lower() in ['perm', 'comb', 'log', 'rtd', 'dtr']):
         try:
@@ -157,7 +157,9 @@ while True:
         2.  Circle -> (cir)
         3.  Square -> (sq)
         4.  Rectangle -> (rec)
-        5.  Back -> (back)
+        5.  Parallelogram -> (para)
+        6.  Back -> (back)
+        7.  Exit -> (exit)
 ----------------------------------------------------------------""")
                 
                 shape = input("Choose a shape: ")
@@ -165,7 +167,11 @@ while True:
                 if (shape.lower() == 'back'):
                     break
 
-                elif (shape not in ['tri', 'cir', 'sq', 'rec']):
+                elif (shape.lower() == 'exit'):
+                    print("Exiting the program.")
+                    exit()
+
+                elif (shape not in ['tri', 'cir', 'sq', 'rec', 'para']):
                     print("Invalid shape. Please try again.")
                     continue
 
@@ -177,12 +183,17 @@ while True:
         1.  Area -> (area)
         2.  Perimeter -> (peri)
         3.  Back -> (back)
+        4.  Exit -> (exit)
 ----------------------------------------------------------------""")
                             
                             sub_operator = input("Choose a operation: ")
     
                             if (sub_operator.lower() == 'back'):
                                 break
+
+                            elif (sub_operator.lower() == 'exit'):
+                                print("Exiting the program.")
+                                exit()
     
                             elif (sub_operator == 'area'):
                                 num1 = input("Enter the base: ")
@@ -208,14 +219,19 @@ while True:
                         while True:
                             print("""----------------------------------------------------------------
         1.  Area -> (area)
-        2.  Circumference -> (circ)
+        2.  Perimeter -> (peri)
         3.  Back -> (back)
+        4.  Exit -> (exit)
 ----------------------------------------------------------------""")
 
                             sub_operator = input("Choose a operation: ")
     
                             if (sub_operator.lower() == 'back'):
                                 break
+
+                            elif (sub_operator.lower() == 'exit'):
+                                print("Exiting the program.")
+                                exit()
     
                             elif (sub_operator == 'area'):
                                 num1 = input("Enter the radius: ")
@@ -240,12 +256,17 @@ while True:
         1.  Area -> (area)
         2.  Perimeter -> (peri)
         3.  Back -> (back)
+        4.  Exit -> (exit)
 ----------------------------------------------------------------""")
                             
                             sub_operator = input("Choose a operation: ")
 
                             if (sub_operator.lower() == 'back'):
                                 break
+
+                            elif (sub_operator.lower() == 'exit'):
+                                print("Exiting the program.")
+                                exit()
 
                             elif (sub_operator == 'area'):
                                 num1 = input("Enter the side: ")
@@ -270,12 +291,17 @@ while True:
         1.  Area -> (area)
         2.  Perimeter -> (peri)
         3.  Back -> (back)
+        4.  Exit -> (exit)
 ----------------------------------------------------------------""")
                             
                             sub_operator = input("Choose a operation: ")
 
                             if (sub_operator.lower() == 'back'):
                                 break
+
+                            elif (sub_operator.lower() == 'exit'):
+                                print("Exiting the program.")
+                                exit()
 
                             elif (sub_operator == 'area'):
                                 num1 = input("Enter the length: ")
@@ -289,6 +315,43 @@ while True:
                                 num2 = input("Enter the breadth: ")
 
                                 print(f"The perimeter is: {shapes_formula.perimeter_rectangle(num1, num2)}")
+                                continue
+
+                            else:
+                                print("Invalid operation. Please try again.")
+                                continue
+
+                    #Parallelogram
+                    elif (shape.lower() == 'para'):
+                        while True:
+                            print("""----------------------------------------------------------------
+        1.  Area -> (area)
+        2.  Perimeter -> (peri)
+        3.  Back -> (back)
+        4.  Exit -> (exit)
+----------------------------------------------------------------""")
+                            
+                            sub_operator = input("Choose a operation: ")
+
+                            if (sub_operator.lower() == 'back'):
+                                break
+
+                            elif (sub_operator.lower() == 'exit'):
+                                print("Exiting the program.")
+                                exit()
+
+                            elif (sub_operator == 'area'):
+                                num1 = input("Enter the base: ")
+                                num2 = input("Enter the height: ")
+
+                                print(f"The area is: {shapes_formula.area_parallelogram(num1, num2)}")
+                                continue
+
+                            elif (sub_operator == 'peri'):
+                                num1 = input("Enter the length: ")
+                                num2 = input("Enter the breadth: ")
+
+                                print(f"The perimeter is: {shapes_formula.perimeter_parallelogram(num1, num2)}")
                                 continue
 
                             else:
