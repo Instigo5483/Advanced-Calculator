@@ -58,3 +58,19 @@ def perimeter_rectangle(length, breadth):
 
     result = 2 * (length + breadth)
     return result
+
+#Area of Parallelogram
+def area_parallelogram(base, height):
+    base = float(base)
+    height = float(height)
+
+    result = base * height
+    return result
+
+#Perimeter of Parallelogram
+def perimeter_parallelogram(length, breadth):
+    length = float(length)
+    breadth = float(breadth)
+
+    result = 2 * (length + breadth)
+    return result
