@@ -1,5 +1,6 @@
 import math
 import Libraries.shapes_formula as shapes_formula
+import Libraries.extra_formula as extra_formula
 
 while True:
     print("""----------------------------------------------------------------
@@ -15,8 +16,9 @@ while True:
         10. Logarithm -> (log)
         11. Radians to Degrees -> (rtd)
         12. Degrees to Radians -> (dtr)
-        13. Shapes Calculations -> (sc)
-        14. Exit -> (exit)
+        13. Pythagoras Theorem -> (pyth)
+        14. Shapes Calculations -> (sc)
+        15. Exit -> (exit)
 ----------------------------------------------------------------""")
     
     operator = input("Choose an operation: ")
@@ -25,7 +27,7 @@ while True:
         print("Exiting the program.")
         exit()
 
-    elif (operator in ['+', '-', '*', '/', '%', '//', '**'] or operator.lower() in ['perm', 'comb', 'log', 'rtd', 'dtr']):
+    elif (operator in ['+', '-', '*', '/', '%', '//', '**'] or operator.lower() in ['perm', 'comb', 'log', 'rtd', 'dtr', 'pyth']):
         try:
             #Addition
             if (operator == '+'):
@@ -143,6 +145,17 @@ while True:
                 num1 = float(input("Enter the angle in degrees: "))
     
                 print(f"The angle in radians is: {math.radians(num1)}")
+                continue
+
+            #Pythagoras Theorem
+            elif (operator.lower() == 'pyth'):
+                print("Please enter '0' to the input that you want to find.")
+
+                num1 = float(input("Enter the base: "))
+                num2 = float(input("Enter the height: "))
+                num3 = float(input("Enter the hypotenuse: "))
+
+                print(f"The result is: {extra_formula.pythagoras_theorem(num1, num2, num3)}")
                 continue
     
         except ValueError:
