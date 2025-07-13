@@ -17,7 +17,7 @@ while True:
         11. Radians to Degrees -> (rtd)
         12. Degrees to Radians -> (dtr)
         13. Pythagoras Theorem -> (pyth)
-        14. Differential -> (diff)
+        14. Differentiation -> (diff)
         15. Integration -> (int)
         16. Shapes Calculations -> (sc)
         17. Exit -> (exit)
