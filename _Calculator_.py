@@ -17,8 +17,10 @@ while True:
         11. Radians to Degrees -> (rtd)
         12. Degrees to Radians -> (dtr)
         13. Pythagoras Theorem -> (pyth)
-        14. Shapes Calculations -> (sc)
-        15. Exit -> (exit)
+        14. Differential -> (diff)
+        15. Integration -> (int)
+        16. Shapes Calculations -> (sc)
+        17. Exit -> (exit)
 ----------------------------------------------------------------""")
     
     operator = input("Choose an operation: ")
@@ -27,7 +29,7 @@ while True:
         print("Exiting the program.")
         exit()
 
-    elif (operator in ['+', '-', '*', '/', '%', '//', '**'] or operator.lower() in ['perm', 'comb', 'log', 'rtd', 'dtr', 'pyth']):
+    elif (operator in ['+', '-', '*', '/', '%', '//', '**']):
         try:
             #Addition
             if (operator == '+'):
@@ -96,9 +98,14 @@ while True:
     
                 print(f"The exponential is: {num1 ** num2}")
                 continue
-    
+
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+    elif operator.lower() in ['perm', 'comb', 'log', 'rtd', 'dtr', 'pyth', 'diff', 'int']:
+        try:
             #Permutation
-            elif (operator == 'perm'):
+            if (operator == 'perm'):
                 num1 = float(input("Enter the first number(n): "))
                 num2 = float(input("Enter the second number(k): "))
     
@@ -156,6 +163,33 @@ while True:
                 num3 = float(input("Enter the hypotenuse: "))
 
                 print(f"The result is: {extra_formula.pythagoras_theorem(num1, num2, num3)}")
+                continue
+
+            elif (operator.lower() == 'diff'):
+                function = input("Enter the function to differentiate: ")
+                variable = input("Enter the variable to differentiate with respect to: ")
+                order = int(input("Enter the order of differentiation (default is 1): ") or 1)
+
+                print(f"The derivative is: {extra_formula.derivative(function, variable, order)}")
+                continue
+
+            elif (operator.lower() == 'int'):
+                function = input("Enter the function to integrate: ")
+                variable = input("Enter the variable to integrate with respect to: ")
+                lower_limit = input("Enter the lower limit (or press Enter for indefinite integral): ")
+                upper_limit = input("Enter the upper limit (or press Enter for indefinite integral): ")
+
+                if lower_limit == '':
+                    lower_limit = None
+                else:
+                    lower_limit = float(lower_limit)
+
+                if upper_limit == '':
+                    upper_limit = None
+                else:
+                    upper_limit = float(upper_limit)
+
+                print(f"The integral is: {extra_formula.integration(function, variable, lower_limit, upper_limit)}")
                 continue
     
         except ValueError:
